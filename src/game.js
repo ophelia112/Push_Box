@@ -11,7 +11,7 @@ export let IsNextGame = false;
 showUI();
 showScore();
 
-function showWin() {
+function showWin() {//展示成功标志
     Win.className = "win";
     Win.innerHTML = "Win!!!";
     btn.className = "btn";
@@ -23,36 +23,35 @@ function showWin() {
     IsNextGame = true;
 }
 
-function showScore() {
+function showScore() {//显示分数
     var score = document.createElement('div');
     score.className = "score";
     score.innerHTML = `${count}步`;
     divContainer.append(score);
 }
 
-function gameOver(){
+function gameOver(){//显示游戏结束
     var End = document.createElement('div');
     End.className = "end";
     End.innerHTML = "游戏结束";
     divContainer.append(End);
 }
 
-function rebuild() {//
+function rebuild() {//重新渲染下一关卡的页面
     count = 0;
     Win.remove();
     btn.remove();
-    divContainer.classList.remove('blur');
+    divContainer.classList.remove('blur');//添加蒙层
     over = false;
     num++;
-    console.log(num);
     showUI();
     showScore();
-    if (num === 5) {
+    if (num === 5) {//判断游戏是否结束
         gameOver();
     }
 }
 
-btn.onclick = function () {
+btn.onclick = function () {//点击按钮后按钮消失
     if (num < 5) {
         btn.style.display = "none";
         IsNextGame = false;
@@ -61,7 +60,7 @@ btn.onclick = function () {
 }
 
 
-window.onkeydown = function (e) {
+window.onkeydown = function (e) {//设置键盘响应事件
     if (over) {
         return;
     }
@@ -79,7 +78,7 @@ window.onkeydown = function (e) {
         result = playerMove("right")
     }
 
-    if (result) {
+    if (result) {//每响应一回就判断结果
         showUI();
         count++;
         showScore();

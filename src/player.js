@@ -52,14 +52,14 @@ function exchange(point1,point2){
 export function playerMove(direction){
     var playerPoint = getPlayerPoint();
     var nextInfo = getNextInfo(playerPoint.row,playerPoint.col,direction);
-    if(nextInfo.value===map.WALL){
+    if(nextInfo.value===map.WALL){//墙，不移动
         return false;
     }
-    if(nextInfo.value===map.SPACE){
+    if(nextInfo.value===map.SPACE){//空白，移动且交换
         exchange(playerPoint,nextInfo);
         return true;
     }
-    else{
+    else{//箱子，判断下下个位置是否空白，交换移动两次
         var nextNextInfo = getNextInfo(nextInfo.row,nextInfo.col,direction);
         if(nextNextInfo.value===map.SPACE){
             exchange(nextInfo,nextNextInfo);

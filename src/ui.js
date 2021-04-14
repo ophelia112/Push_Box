@@ -14,13 +14,14 @@ function IsCorrect(row, col) {
 }
 
 function setOnePiece(row, col) {
+    //切换地图核心代码
     var value = map.arrMap[num][row][col];
     var div = document.createElement("div");
 
     div.className = 'item';
     div.style.left = col * pieceWidth + 'px';
     div.style.top = row * pieceHeight + 'px';
-
+    // 利用类名切换显示的内容
     var correct = IsCorrect(row, col);
     if (value === map.WALL) {
         div.classList.add('wall');

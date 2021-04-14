@@ -26,7 +26,7 @@ function showWin() {//展示成功标志
 function showScore() {//显示分数
     var score = document.createElement('div');
     score.className = "score";
-    score.innerHTML = `${count}步`;
+    score.innerHTML = `第${num+1}关，经过${count}步`;
     divContainer.append(score);
 }
 

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Push Box</title>
+    <style>
+        #game{
+            position: relative;
+            margin: 10px auto;
+            /* border: 1px solid #000; */
+        }
+
+        #game .item{
+            position: absolute;
+            width: 45px;
+            height: 45px;
+            background-size: 100% 100%;
+        }
+
+        #game .wall{
+            background-image: url("./imgs/wall.jpg");
+        }
+
+        #game .box {
+            background-image: url("./imgs/box.png");
+        }
+        #game .currentBox {
+            background-image: url("./imgs/over_box.png ");
+        }
+        #game .player{
+            background-image: url("./imgs/player.png");
+        }
+        #game .correct{
+            border: 2px solid rgb(0, 200, 0);
+            box-sizing: border-box;
+        }
+        #game .win{
+            width: 200px;
+            height: 80px;
+            line-height: 80px;
+            color: #fff;
+            text-align: center;
+            /* border: 1px solid red; */
+            background: rgb(222, 184, 135);
+            font-weight: bold;
+            position: absolute;
+            left: calc(50% - 100px);
+            top: calc(50% - 40px);
+            border-radius: 15px;
+            z-index: 1000;
+        }
+        .blur{
+            background: rgba(0, 0, 0, .3);
+        }
+        #game .score{
+            width: 60px;
+            height: 30px;
+            line-height: 30px;
+            color: #fff;
+            font-size: 11px;
+            text-align: center;
+            background: chocolate;
+            font-weight: bold;
+            position: absolute;
+            left:0px;
+            top: 0px;
+        }
+
+        #game .end{
+            width: 200px;
+            height: 80px;
+            line-height: 80px;
+            color: #fff;
+            text-align: center;
+            /* border: 1px solid red; */
+            background: rgb(222, 184, 135);
+            font-weight: bold;
+            position: absolute;
+            left: calc(50% - 100px);
+            top: calc(50% - 40px);
+            border-radius: 15px;
+            z-index: 1000;
+        } 
+
+        .btn{
+            width: 90px;
+            height: 35px;
+            line-height: 35px;
+            color: #fff;
+            font-weight: bold;
+            background: chocolate;
+            text-align: center;
+            border-radius: 5px;
+            margin: auto;
+            /* display: none; */
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="game">
+    </div>
+    <!-- <div class="btn">下一关</div> -->
+    <script src="./src/index.js" type="module"></script>
+</body>
+</html>
